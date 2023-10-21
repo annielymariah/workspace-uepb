@@ -1,9 +1,15 @@
 package atividade03;
 
 public class ListaEncadeada implements ListaEncadeada_IF {
-
     public Integer dado;
-    public ListaEncadeada prox;
+    public ListaEncadeada proximo;
+
+    public ListaEncadeada() {
+    }
+
+    public ListaEncadeada(Integer novodado) {
+        this.dado = novodado;
+    }
 
     public boolean isEmpty() {
         if (dado == null) {
@@ -17,8 +23,7 @@ public class ListaEncadeada implements ListaEncadeada_IF {
         if (isEmpty()) {
             return 0;
         } else {
-            return 1 + prox.size();
-
+            return 1 + proximo.size();
         }
     }
 
@@ -29,50 +34,60 @@ public class ListaEncadeada implements ListaEncadeada_IF {
             if (dado == element) {
                 return dado;
             } else {
-                return prox.search(element);
+                return proximo.search(element);
             }
         }
 
     }
 
     public void insert(Integer element) {
+        ListaEncadeada novoNo = new ListaEncadeada(element);
+        novoNo.dado = dado;
+        novoNo.proximo = proximo;
 
-        if (isEmpty()) {
-            dado = element;
-        }
-        ListaEncadeada novalista = new ListaEncadeada();
-        novalista.dado = element;
-        novalista.prox = this;
-        this.prox = novalista;
-
+        this.dado = element;
+        this.proximo = novoNo;
     }
 
     public void remove(Integer element) {
         if (isEmpty()) {
 
-        } else {
-            if (dado == element) {
-                dado = prox.dado;
-                prox = prox.prox;
-            }
+            return;
         }
+        if (dado == element) {
 
+            dado = proximo.dado;
+            proximo = proximo.proximo;
+        } else {
+
+            proximo.remove(element);
+        }
     }
 
     public Integer[] toArray() {
-        Integer[] resultados = new Integer[size()];
-        auxtoArray(resultados, 0, this);
-        return resultados;
-
+        if (isEmpty()) {
+            return new Integer[0];
+        } else {
+            Integer[] resultados = new Integer[size()];
+            auxtoArray(resultados, 0, this);
+            return resultados;
+        }
     }
 
     public void auxtoArray(Integer[] vetor, int index, ListaEncadeada no) {
         if (!no.isEmpty()) {
             vetor[index] = no.dado;
-            if (no.prox != null) {
-                auxtoArray(vetor, index + 1, no.prox);
+            if (no.proximo != null) {
+                auxtoArray(vetor, index + 1, no.proximo);
             }
         }
+    }
+
+    public String toString() {
+        return "{" +
+                " dado='" + dado + "'" +
+                ", prox='" + proximo + "'" +
+                "}";
     }
 
 }

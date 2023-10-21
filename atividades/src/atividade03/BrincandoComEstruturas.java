@@ -1,9 +1,11 @@
+
 package atividade03;
+import java.util.LinkedList;
 
 public class BrincandoComEstruturas {
 
 	public static void main(String[] args) throws Exception {
-	
+
 		System.out.println("Brincando com ListaEncadeada...");
 
 		ListaEncadeada_IF minhaLista = new ListaEncadeada();
@@ -15,6 +17,8 @@ public class BrincandoComEstruturas {
 		System.out.println(minhaLista.size() == 1);
 		System.out.println(minhaLista.toArray()[0] == 100);
 		minhaLista.insert(200);
+
+
 
 		System.out.println(minhaLista.size() == 2);
 		System.out.println(minhaLista.toArray()[0] == 200);
@@ -36,23 +40,23 @@ public class BrincandoComEstruturas {
 		System.out.println(minhaLista.toArray()[0] == 200);
 		System.out.println(minhaLista.search(200) == 200);
 		System.out.println();
-		
-        // Pilha com Lista
 
-		System.out.println("Brincando com PilhaComLista...");
+		// Pilha com Lista
 
-		Pilha_IF minhaPilha = new PilhaComLista();
+		// System.out.println("Brincando com PilhaComLista...");
 
-		minhaPilha.push(100);
-		minhaPilha.push(200);
+		// Pilha_IF minhaPilha = new PilhaComLista();
 
-		System.out.println(minhaPilha.top() == 200);
-		System.out.println(minhaPilha.pop() == 200);
-		System.out.println(minhaPilha.pop() == 100);
-		System.out.println(minhaPilha.isEmpty());
-		System.out.println();
-		
-        // Fila com Lista
+		// minhaPilha.push(100);
+		// minhaPilha.push(200);
+
+		// System.out.println(minhaPilha.top() == 200);
+		// System.out.println(minhaPilha.pop() == 200);
+		// System.out.println(minhaPilha.pop() == 100);
+		// System.out.println(minhaPilha.isEmpty());
+		// System.out.println();
+
+		// Fila com Lista
 
 		// System.out.println("Brincando com FilaComPilhas...");
 
@@ -66,10 +70,9 @@ public class BrincandoComEstruturas {
 		// System.out.println(minhaFila.dequeue() == 200);
 		// System.out.println(minhaFila.isEmpty());
 		// System.out.println();
-				
+
 		// OBS.: Espera-se que nenhum print mostre 'false' na tela!
-		
+
 	}
-	
 
 }
