@@ -4,50 +4,52 @@ public class PilhaComLista implements Pilha_IF {
 
 private ListaEncadeada array;
 
-    public Integer capacity = 10;
-    public Integer top = 0; // Resolver depois
-    
     public PilhaComLista() {
-        this.array = new ListaEncadeada();
+        array = new ListaEncadeada();
     }
 
-
-    public void push(Integer element) throws Exception {
+    public void push(Integer elemento) throws Exception {
         if (isFull()) {
             throw new Exception("A pilha está cheia");
         }
-        else {  
-            array.insert(element);
-        }
+        
+        array.insert(elemento);
     }
 
     public Integer pop() throws Exception {
         if (isEmpty()) {
             throw new Exception("A pilha está vazia");
         }
-        else {
-            top();
-            array.remove(top());
-            return 1;
-        }
+        
+        int topelemento = array.dado;
+        array.dado = array.next.dado;
+        array.next = array.next.next;
+        return topelemento;
     }
 
     public Integer top() throws Exception {
         if (isEmpty()) {
-            throw new Exception("A pilha está vazia");
+            throw new Exception("Pilha VAZIA!");
         }
-        else {
-            top();
-            array.search(top); 
-            return 1;
-        }
-    } // Esperar Gabriel
+        return array.dado;
+    }
 
     public boolean isEmpty() {
-        return array.isEmpty();
+        return array.dado == null;
     }
 
     public boolean isFull() {
-        return array.size() > capacity;
+        return isFullRecursivo(array, 0);
+    }
+
+    private boolean isFullRecursivo(ListaEncadeada atual, int contagem) {
+        if (contagem >= 10) {
+            return true;
+        }
+
+        if (atual.dado != null) {
+            return isFullRecursivo(atual.next, contagem + 1);
+        }
+        return false;
     }
 }

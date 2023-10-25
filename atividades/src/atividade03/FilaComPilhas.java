@@ -1,62 +1,50 @@
 package atividade03;
 
-
-/*
-To-Do List:  
-construtor de pilha na linha 12 e 13
-saber se tem alguma coisa certa nisso aquikkkkkkk
-*/
-
 public class FilaComPilhas implements Fila_IF {
+    private PilhaComLista pilha1; 
+    private PilhaComLista pilha2; 
 
-    public FilaComPilhas(int capacidade) {
-        pilha1 = new PilhaComLista(capacidade);
-        pilha2 = new PilhaComLista(capacidade);
+    public FilaComPilhas() {
+        pilha1 = new PilhaComLista(); 
+        pilha2 = new PilhaComLista();
     }
 
-    public void enqueue(Integer element) throws Exception {
+    public void enqueue(Integer elemento) throws Exception {
         if (isFull()) {
-            throw new Exception ("A fila está cheia");
+            throw new Exception("A fila está cheia");
         }
-        FilaComPilhas.head().push(element);
+        
+        while (!pilha1.isEmpty()) {
+            pilha2.push(pilha1.pop());
+        }
+        pilha1.push(elemento);
+
+        while (!pilha2.isEmpty()) {
+            pilha1.push(pilha2.pop());
+        }
     }
 
     public int dequeue() throws Exception {
         if (isEmpty()) {
             throw new Exception("A fila está vazia.");
         }
-
-        if (pilha2.isEmpty()) {
-            transferir_Pilha1_Para_Pilha2();
-        }
-
-        return pilha2.pop();
-
+        return pilha1.pop();
     }
 
-	public int head() throws Exception {
+    public Integer head() throws Exception {
         if (isEmpty()) {
             throw new Exception("A fila está vazia.");
         }
-
-        if (pilha2.isEmpty()) {
-            transferir_Pilha1_Para_Pilha2();
-        }
-
-        return pilha2.top();
+        return pilha1.top();
     }
 
-	public boolean isEmpty() {
-        return pilha1.isEmpty() && pilha2.isEmpty();
+    public boolean isEmpty() {
+        return pilha1.isEmpty();
     }
 
-	public boolean isFull() {
-       return pilha1.isFull() && pilha2.isFull();
+    public boolean isFull() {
+        return pilha1.isFull();
     }
 
-    private void transferir_Pilha1_Para_Pilha2() {
-        while (!pilha1.isEmpty()) {
-            pilha2.push(pilha1.pop());
-        }
     
 }
