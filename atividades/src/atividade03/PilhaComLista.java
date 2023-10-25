@@ -31,7 +31,10 @@ private ListaEncadeada array;
         if (isEmpty()) {
             throw new Exception("Pilha VAZIA!");
         }
-        return array.dado;
+        else {
+            return array.dado;
+        }
+        
     }
 
     public boolean isEmpty() {
@@ -47,9 +50,12 @@ private ListaEncadeada array;
             return true;
         }
 
-        if (atual.dado != null) {
+        else if (atual.dado != null) {
             return isFullRecursivo(atual.next, contagem + 1);
         }
-        return false;
+
+        else {
+            return false;
+        }
     }
 }

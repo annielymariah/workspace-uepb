@@ -30,7 +30,7 @@ public class ListaEncadeada implements ListaEncadeada_IF {
 
     private int searchRecursivo(ListaEncadeada current, Integer elemento) throws Exception {
         if (current.dado == null) {
-            throw new Exception("elementoo NÃO ENCONTRADO!");
+            throw new Exception("O elemento não foi encontrado.");
         }
         if (current.dado.equals(elemento)) {
             return elemento;
