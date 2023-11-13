@@ -1,14 +1,26 @@
 package atividade04;
 
-public class No {
+ class No {
     public Integer data;
     public No esquerda;
     public No direita;
 
-    public No(Integer novaData){
-        this.data = novaData;
-        this.esquerda = null;
-        this.direita = null;
+
+
+    public No getEsquerda() {
+        return this.esquerda;
     }
-    
+
+    public void setEsquerda(No esquerda) {
+        this.esquerda = esquerda;
+    }
+
+    public No getDireita() {
+        return this.direita;
+    }
+
+    public void setDireita(No direita) {
+        this.direita = direita;
+    }
+
 }
