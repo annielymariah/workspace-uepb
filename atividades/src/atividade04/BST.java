@@ -1,74 +1,82 @@
 package atividade04;
-import java.io.*;   
-import java.util.*; 
 
-public class BST implements BST_IF{
-    
+public class BST implements BST_IF {
+
 	public No raiz;
 
-	public BST(){
-		this.raiz = null;
+	public class No {
+		Integer data;
+		No esquerda, direita;
+
+		public No(Integer item) {
+			data = item;
+			esquerda = direita = null;
+		}
 	}
 
-	public void insert(Integer element){
-		No novoNo = new No(); // cria um novo Nó
-		novoNo.data = element; // atribui o valor recebido ao item de dados do 
-	
-		if (raiz == null){ 
-			raiz = novoNo;
-		}
-
-		else  { // se nao for a raiz
-		  No atual = raiz;
-		  while(true) {
-			if (element < atual.data) { // ir para esquerda
-			  atual = ;
-			  if (atual == null) {
-				anterior.esq = novo;
-				return;
-			  } 
-			}  // fim da condição ir a esquerda
-			else { // ir para direita
-			   atual = atual.dir;
-			   if (atual == null) {
-				 anterior.dir = novo;
-				 return;
-			   }
-			} // fim da condição ir a direita
-		  } // fim do laço while
-		}
-
-
-
+	public void insert(Integer element) {
+		raiz = insertRecursive(raiz, element);
 	}
-	public Integer search(Integer element) throws Exception{
+
+	public No insertRecursive(No root, Integer element) {
+		if (raiz == null) {
+			raiz = new No(element);
+			return raiz;
+		}
+
+		if (element < raiz.data) {
+			raiz.esquerda = insertRecursive(raiz.esquerda, element);
+		} else if (element > root.data) {
+			raiz.direita = insertRecursive(raiz.direita, element);
+		}
+
+		return raiz;
+	}
+
+	public Integer search(Integer element) throws Exception {
+
+		return 0;
+	}
+
+	private Integer searchRecursive(No raiz, Integer element) {
+
 		return 0;
 
 	}
-	public int[] preOrder(){
 
-		int[] placeholder = new int[]{1, 2, 3}; // Substitua pelos valores desejados
-        return placeholder;
+	public int[] preOrder() {
+		int[] placeholder = new int[] { 1, 2, 3 }; // Substitua pelos valores desejados
+		return placeholder;
+	}
 
-
+	private void preOrderRecursive(No raiz, int[] result) {
 
 	}
-	public int[] order(){
 
-		int[] placeholder = new int[]{1, 2, 3}; // Substitua pelos valores desejados
-        return placeholder;
+	public int[] order() {
+		int[] placeholder = new int[] { 1, 2, 3 }; // Substitua pelos valores desejados
+		return placeholder;
+	}
+
+	private void orderRecursive(No raiz, int[] result) {
 
 	}
-	public int[] postOrder(){
 
-		int[] placeholder = new int[]{1, 2, 3}; // Substitua pelos valores desejados
-        return placeholder;
+	public int[] postOrder() {
+		int[] placeholder = new int[] { 1, 2, 3 }; // Substitua pelos valores desejados
+		return placeholder;
+	}
 
+	private void postOrderRecursive(No raiz, int[] result) {
 
 	}
-	public boolean isComplete(){
+
+	public boolean isComplete() {
 		return true;
 	}
 
-    
+	private boolean isCompleteRecursive(No raiz) {
+		return false;
+	}
+
 }
