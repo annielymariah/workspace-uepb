@@ -1,26 +1,64 @@
 package atividade04;
+import java.util.LinkedList;
 
-/*
- * Interface para implementação da classe "TabelaHash", a qual deve
- * ser implementada usando endereçamento fechado e o método da divisão.
- */
-public interface TabelaHash {
-	public void insert(Integer element);
-	public void remove(Integer element) throws Exception; //lançar exceção caso o element não esteja na tabela
-	public int search(Integer element) throws Exception; //lançar exceção caso o element não esteja na tabela
-	public String print();
-	
-	/*
-	 OBSERVACAO:
-	 O metodo print() deve mostrar todos os elementos de cada posicao da tabela.
-	 Exemplo (com uma tabela de 8 posicoes):
-	 0: 24, 16
-	 1: 
-	 2: 10
-	 3: 19, 11, 3
-	 4: 12, 4
-	 5: 
-	 6: 22, 14, 6
-	 7: 15
-	 */
+public class TabelaHash implements TabelaHash_IF {
+    private LinkedList<Integer>[] tabela;
+    private int tamanho;
+
+    public TabelaHash(int tamanho) {
+        this.tamanho = tamanho;
+        this.tabela = new LinkedList[tamanho];
+        for (int i = 0; i < tamanho; i++) {
+            tabela[i] = new LinkedList<>();
+        }
+    }
+
+    @Override
+    public void insert(Integer element) {
+        int indice = hash(element);
+        tabela[indice].add(element);
+    }
+
+    @Override
+    public void remove(Integer element) throws Exception {
+        int indice = hash(element);
+        if (!tabela[indice].remove(element)) {
+            throw new Exception("Elemento não encontrado na tabela.");
+        }
+    }    
+
+    @Override
+    public int search(Integer element) throws Exception {
+        int indice = hash(element);
+        if (tabela[indice].contains(element)) {
+            return element;
+        } else {
+            throw new Exception("Elemento não encontrado na tabela.");
+        }
+    }
+
+    private int hash(Integer element) {
+        return element % tamanho;
+    }
+
+    @Override
+    public String print() {
+        String resultado = "";
+        for (int i = 0; i < tamanho; i++) {
+            resultado += i + ": ";
+            if (!tabela[i].isEmpty()) {
+                LinkedList<Integer> reversedList = new LinkedList<>();
+                for (int j = tabela[i].size() - 1; j >= 0; j--) {
+                    reversedList.add(tabela[i].get(j));
+                }
+    
+                resultado += reversedList.get(0);
+                for (int j = 1; j < reversedList.size(); j++) {
+                    resultado += ", " + reversedList.get(j);
+                }
+            }
+            resultado += "\n";
+        }
+        return resultado;
+    }
 }
