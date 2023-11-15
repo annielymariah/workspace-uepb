@@ -1,0 +1,402 @@
+[
+    {
+      "buscaLinear_iterativa": 35800,
+      "buscaLinear_recursiva": 252700,
+      "buscaLinear_iterativa2": 52600,
+      "buscaBinaria_iterativa": 1500,
+      "buscaBinaria_recursiva": 1800,
+      "index": 31271
+    },
+    {
+      "buscaLinear_iterativa": 7800,
+      "buscaLinear_recursiva": 107800,
+      "buscaLinear_iterativa2": 21300,
+      "buscaBinaria_iterativa": 1400,
+      "buscaBinaria_recursiva": 1800,
+      "index": 31279
+    },
+    {
+      "buscaLinear_iterativa": 13700,
+      "buscaLinear_recursiva": 134000,
+      "buscaLinear_iterativa2": 45300,
+      "buscaBinaria_iterativa": 2600,
+      "buscaBinaria_recursiva": 1100,
+      "index": 31269
+    },
+    {
+      "buscaLinear_iterativa": 6400,
+      "buscaLinear_recursiva": 101900,
+      "buscaLinear_iterativa2": 21300,
+      "buscaBinaria_iterativa": 1400,
+      "buscaBinaria_recursiva": 1300,
+      "index": 31281
+    },
+    {
+      "buscaLinear_iterativa": 16100,
+      "buscaLinear_recursiva": 204500,
+      "buscaLinear_iterativa2": 58400,
+      "buscaBinaria_iterativa": 2000,
+      "buscaBinaria_recursiva": 1400,
+      "index": 31239
+    },
+    {
+      "buscaLinear_iterativa": 19000,
+      "buscaLinear_recursiva": 218400,
+      "buscaLinear_iterativa2": 41400,
+      "buscaBinaria_iterativa": 2700,
+      "buscaBinaria_recursiva": 2300,
+      "index": 31249
+    },
+    {
+      "buscaLinear_iterativa": 6900,
+      "buscaLinear_recursiva": 106500,
+      "buscaLinear_iterativa2": 19800,
+      "buscaBinaria_iterativa": 1200,
+      "buscaBinaria_recursiva": 1300,
+      "index": 31295
+    },
+    {
+      "buscaLinear_iterativa": 10200,
+      "buscaLinear_recursiva": 144900,
+      "buscaLinear_iterativa2": 39100,
+      "buscaBinaria_iterativa": 1600,
+      "buscaBinaria_recursiva": 1400,
+      "index": 31269
+    },
+    {
+      "buscaLinear_iterativa": 8000,
+      "buscaLinear_recursiva": 118800,
+      "buscaLinear_iterativa2": 22400,
+      "buscaBinaria_iterativa": 1600,
+      "buscaBinaria_recursiva": 1200,
+      "index": 31257
+    },
+    {
+      "buscaLinear_iterativa": 7400,
+      "buscaLinear_recursiva": 104800,
+      "buscaLinear_iterativa2": 37700,
+      "buscaBinaria_iterativa": 1100,
+      "buscaBinaria_recursiva": 1200,
+      "index": 31295
+    },
+    {
+      "buscaLinear_iterativa": 10700,
+      "buscaLinear_recursiva": 112700,
+      "buscaLinear_iterativa2": 212000,
+      "buscaBinaria_iterativa": 1100,
+      "buscaBinaria_recursiva": 1250,
+      "index": 32640
+    },
+    {
+      "buscaLinear_iterativa": 11300,
+      "buscaLinear_recursiva": 112700,
+      "buscaLinear_iterativa2": 21200,
+      "buscaBinaria_iterativa": 1400,
+      "buscaBinaria_recursiva": 1300,
+      "index": 32688
+    },
+    {
+      "buscaLinear_iterativa": 11300,
+      "buscaLinear_recursiva": 112700,
+      "buscaLinear_iterativa2": 21200,
+      "buscaBinaria_iterativa": 1400,
+      "buscaBinaria_recursiva": 1300,
+      "index": 32688
+    },
+    {
+      "buscaLinear_iterativa": 7000,
+      "buscaLinear_recursiva": 184700,
+      "buscaLinear_iterativa2": 22000,
+      "buscaBinaria_iterativa": 1100,
+      "buscaBinaria_recursiva": 1100,
+      "index": 31202
+    },
+    {
+      "buscaLinear_iterativa": 6900,
+      "buscaLinear_recursiva": 138000,
+      "buscaLinear_iterativa2": 31000,
+      "buscaBinaria_iterativa": 1400,
+      "buscaBinaria_recursiva": 1300,
+      "index": 31283
+    },
+    {
+      "buscaLinear_iterativa": 6700,
+      "buscaLinear_recursiva": 110700,
+      "buscaLinear_iterativa2": 20500,
+      "buscaBinaria_iterativa": 900,
+      "buscaBinaria_recursiva": 1000,
+      "index": 31260
+    },
+    {
+      "buscaLinear_iterativa": 7300,
+      "buscaLinear_recursiva": 99600,
+      "buscaLinear_iterativa2": 23000,
+      "buscaBinaria_iterativa": 1800,
+      "buscaBinaria_recursiva": 900,
+      "index": 31261
+    },
+    {
+      "buscaLinear_iterativa": 6900,
+      "buscaLinear_recursiva": 105200,
+      "buscaLinear_iterativa2": 69000,
+      "buscaBinaria_iterativa": 1400,
+      "buscaBinaria_recursiva": 1700,
+      "index": 31250
+    },
+    {
+      "buscaLinear_iterativa": 7900,
+      "buscaLinear_recursiva": 99000,
+      "buscaLinear_iterativa2": 20800,
+      "buscaBinaria_iterativa": 1300,
+      "buscaBinaria_recursiva": 900,
+      "index": 31281
+    },
+    {
+      "buscaLinear_iterativa": 7300,
+      "buscaLinear_recursiva": 160900,
+      "buscaLinear_iterativa2": 23700,
+      "buscaBinaria_iterativa": 1900,
+      "buscaBinaria_recursiva": 1000,
+      "index": 31271
+    },
+    {
+      "buscaLinear_iterativa": 15300,
+      "buscaLinear_recursiva": 214800,
+      "buscaLinear_iterativa2": 31500,
+      "buscaBinaria_iterativa": 2100,
+      "buscaBinaria_recursiva": 2000,
+      "index": 31269
+    },
+    {
+      "buscaLinear_iterativa": 7100,
+      "buscaLinear_recursiva": 105300,
+      "buscaLinear_iterativa2": 19600,
+      "buscaBinaria_iterativa": 1000,
+      "buscaBinaria_recursiva": 1100,
+      "index": 31293
+    },
+    {
+      "buscaLinear_iterativa": 7100,
+      "buscaLinear_recursiva": 110600,
+      "buscaLinear_iterativa2": 21000,
+      "buscaBinaria_iterativa": 1600,
+      "buscaBinaria_recursiva": 2000,
+      "index": 31287
+    },
+    {
+      "buscaLinear_iterativa": 4600,
+      "buscaLinear_recursiva": 34900,
+      "buscaLinear_iterativa2": 12900,
+      "buscaBinaria_iterativa": 200,
+      "buscaBinaria_recursiva": 200,
+      "index": 31163
+    },
+    {
+      "buscaLinear_iterativa": 4700,
+      "buscaLinear_recursiva": 34100,
+      "buscaLinear_iterativa2": 12800,
+      "buscaBinaria_iterativa": 200,
+      "buscaBinaria_recursiva": 200,
+      "index": 31165
+    },
+    {
+      "buscaLinear_iterativa": 4800,
+      "buscaLinear_recursiva": 35200,
+      "buscaLinear_iterativa2": 12900,
+      "buscaBinaria_iterativa": 100,
+      "buscaBinaria_recursiva": 100,
+      "index": 31149
+    },
+    {
+      "buscaLinear_iterativa": 4600,
+      "buscaLinear_recursiva": 34200,
+      "buscaLinear_iterativa2": 13100,
+      "buscaBinaria_iterativa": 100,
+      "buscaBinaria_recursiva": 100,
+      "index": 31117
+    },
+    {
+      "buscaLinear_iterativa": 4400,
+      "buscaLinear_recursiva": 37900,
+      "buscaLinear_iterativa2": 13400,
+      "buscaBinaria_iterativa": 100,
+      "buscaBinaria_recursiva": 200,
+      "index": 31139
+    },
+    {
+      "buscaLinear_iterativa": 4600,
+      "buscaLinear_recursiva": 34400,
+      "buscaLinear_iterativa2": 12600,
+      "buscaBinaria_iterativa": 200,
+      "buscaBinaria_recursiva": 100,
+      "index": 31155
+    },
+    {
+      "buscaLinear_iterativa": 5100,
+      "buscaLinear_recursiva": 35500,
+      "buscaLinear_iterativa2": 13100,
+      "buscaBinaria_iterativa": 100,
+      "buscaBinaria_recursiva": 100,
+      "index": 31157
+    },
+    {
+      "buscaLinear_iterativa": 4800,
+      "buscaLinear_recursiva": 37000,
+      "buscaLinear_iterativa2": 14800,
+      "buscaBinaria_iterativa": 200,
+      "buscaBinaria_recursiva": 200,
+      "index": 31129
+    },
+    {
+      "buscaLinear_iterativa": 4700,
+      "buscaLinear_recursiva": 34900,
+      "buscaLinear_iterativa2": 12900,
+      "buscaBinaria_iterativa": 200,
+      "buscaBinaria_recursiva": 100,
+      "index": 31131
+    },
+    {
+      "buscaLinear_iterativa": 4600,
+      "buscaLinear_recursiva": 34400,
+      "buscaLinear_iterativa2": 12700,
+      "buscaBinaria_iterativa": 100,
+      "buscaBinaria_recursiva": 200,
+      "index": 31169
+    },
+    {
+      "buscaLinear_iterativa": 4700,
+      "buscaLinear_recursiva": 34000,
+      "buscaLinear_iterativa2": 12600,
+      "buscaBinaria_iterativa": 100,
+      "buscaBinaria_recursiva": 100,
+      "index": 31121
+    },
+    {
+      "buscaLinear_iterativa": 4500,
+      "buscaLinear_recursiva": 33900,
+      "buscaLinear_iterativa2": 12600,
+      "buscaBinaria_iterativa": 200,
+      "buscaBinaria_recursiva": 200,
+      "index": 31151
+    },
+    {
+      "buscaLinear_iterativa": 10700,
+      "buscaLinear_recursiva": 47100,
+      "buscaLinear_iterativa2": 18900,
+      "buscaBinaria_iterativa": 300,
+      "buscaBinaria_recursiva": 200,
+      "index": 31167
+    },
+    {
+      "buscaLinear_iterativa": 4700,
+      "buscaLinear_recursiva": 35500,
+      "buscaLinear_iterativa2": 12600,
+      "buscaBinaria_iterativa": 200,
+      "buscaBinaria_recursiva": 100,
+      "index": 31109
+    },
+    {
+      "buscaLinear_iterativa": 4700,
+      "buscaLinear_recursiva": 33600,
+      "buscaLinear_iterativa2": 12600,
+      "buscaBinaria_iterativa": 100,
+      "buscaBinaria_recursiva": 200,
+      "index": 31129
+    },
+    {
+      "buscaLinear_iterativa": 4800,
+      "buscaLinear_recursiva": 45200,
+      "buscaLinear_iterativa2": 14400,
+      "buscaBinaria_iterativa": 200,
+      "buscaBinaria_recursiva": 200,
+      "index": 31141
+    },
+    {
+      "buscaLinear_iterativa": 4600,
+      "buscaLinear_recursiva": 35300,
+      "buscaLinear_iterativa2": 13200,
+      "buscaBinaria_iterativa": 100,
+      "buscaBinaria_recursiva": 100,
+      "index": 31171
+    },
+    {
+      "buscaLinear_iterativa": 4600,
+      "buscaLinear_recursiva": 34300,
+      "buscaLinear_iterativa2": 13000,
+      "buscaBinaria_iterativa": 100,
+      "buscaBinaria_recursiva": 200,
+      "index": 31135
+    },
+    {
+      "buscaLinear_iterativa": 4600,
+      "buscaLinear_recursiva": 33900,
+      "buscaLinear_iterativa2": 12700,
+      "buscaBinaria_iterativa": 200,
+      "buscaBinaria_recursiva": 100,
+      "index": 31133
+    },
+    {
+      "buscaLinear_iterativa": 4600,
+      "buscaLinear_recursiva": 35900,
+      "buscaLinear_iterativa2": 12600,
+      "buscaBinaria_iterativa": 100,
+      "buscaBinaria_recursiva": 100,
+      "index": 31115
+    },
+    {
+      "buscaLinear_iterativa": 11000,
+      "buscaLinear_recursiva": 45300,
+      "buscaLinear_iterativa2": 16100,
+      "buscaBinaria_iterativa": 300,
+      "buscaBinaria_recursiva": 100,
+      "index": 31115
+    },
+    {
+      "buscaLinear_iterativa": 4600,
+      "buscaLinear_recursiva": 34000,
+      "buscaLinear_iterativa2": 12700,
+      "buscaBinaria_iterativa": 200,
+      "buscaBinaria_recursiva": 100,
+      "index": 31121
+    },
+    {
+      "buscaLinear_iterativa": 7800,
+      "buscaLinear_recursiva": 104200,
+      "buscaLinear_iterativa2": 20000,
+      "buscaBinaria_iterativa": 700,
+      "buscaBinaria_recursiva": 1400,
+      "index": 31293
+    },
+    {
+      "buscaLinear_iterativa": 8399,
+      "buscaLinear_recursiva": 117700,
+      "buscaLinear_iterativa2": 20600,
+      "buscaBinaria_iterativa": 1101,
+      "buscaBinaria_recursiva": 1101,
+      "index": 31247
+    },
+    {
+      "buscaLinear_iterativa": 20800,
+      "buscaLinear_recursiva": 153200,
+      "buscaLinear_iterativa2": 36200,
+      "buscaBinaria_iterativa": 2000,
+      "buscaBinaria_recursiva": 1900,
+      "index": 31237
+    },
+    {
+      "buscaLinear_iterativa": 12201,
+      "buscaLinear_recursiva": 145600,
+      "buscaLinear_iterativa2": 56399,
+      "buscaBinaria_iterativa": 2900,
+      "buscaBinaria_recursiva": 2200,
+      "index": 31261
+    },
+    {
+      "buscaLinear_iterativa": 14100,
+      "buscaLinear_recursiva": 222100,
+      "buscaLinear_iterativa2": 55400,
+      "buscaBinaria_iterativa": 3600,
+      "buscaBinaria_recursiva": 2699,
+      "index": 31245
+    }
+  ]

@@ -18,7 +18,7 @@ public class BST implements BST_IF {
 		raiz = insertRecursive(raiz, element);
 	}
 
-	public No insertRecursive(No root, Integer element) {
+	public No insertRecursive(No raiz, Integer element) {
 		if (raiz == null) {
 			raiz = new No(element);
 			return raiz;
@@ -26,7 +26,7 @@ public class BST implements BST_IF {
 
 		if (element < raiz.data) {
 			raiz.esquerda = insertRecursive(raiz.esquerda, element);
-		} else if (element > root.data) {
+		} else if (element > raiz.data) {
 			raiz.direita = insertRecursive(raiz.direita, element);
 		}
 
@@ -62,13 +62,26 @@ public class BST implements BST_IF {
 
 	}
 
+
 	public int[] postOrder() {
-		int[] placeholder = new int[] { 1, 2, 3 }; // Substitua pelos valores desejados
-		return placeholder;
+		int[] resultados = new int[quantNo(raiz)];
+		postOrderRecursive(raiz, resultados,new Indice());
+		return resultados;
 	}
 
-	private void postOrderRecursive(No raiz, int[] result) {
-
+	public void postOrderRecursive(No raiz, int[] result, Indice indice) {
+		if(raiz != null) {
+			postOrderRecursive(raiz.esquerda, result, indice);
+			postOrderRecursive(raiz.direita, result, indice);
+			if (indice.valor > 0) {
+				result[indice.valor--] = raiz.data;
+				indice.valor--; // Decrementa apenas se o índice for maior que zero
+			} else {
+				// Trate o caso em que o índice já é zero ou negativo, se necessário
+				// Isso pode ocorrer se houver mais elementos do que o valor inicial de Indice
+				// Por exemplo, se a árvore for modificada após a criação de Indice
+			}
+		}
 	}
 
 	public boolean isComplete() {
@@ -79,4 +92,23 @@ public class BST implements BST_IF {
 		return false;
 	}
 
+	public int quantNo(No raiz) {
+		if (raiz == null) {
+			return 0;
+		}
+		return 1 + quantNo(raiz.esquerda) + quantNo(raiz.direita);
+	}
+
+	public static void indexarValoresReverso(int[] vetor, int[] valores, int indice) {
+		if (indice >= 0) {
+			vetor[indice] = valores[indice];
+			indexarValoresReverso(vetor, valores, indice - 1);
+		}
+	}
+
+
+	public static class Indice {
+		BST arvore = new BST();
+		int valor = arvore.quantNo(arvore.raiz);
+	}
 }
