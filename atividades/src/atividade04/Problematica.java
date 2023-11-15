@@ -8,7 +8,7 @@ public class Problematica {
 
         arvore.insert(27);
         arvore.insert(31);
-        arvore.insert(35);
+        arvore.insert(40);
         arvore.insert(41);
 
         System.out.println("Percurso Pós-Ordem:");

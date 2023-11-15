@@ -15,6 +15,7 @@ public class BST implements BST_IF {
 	}
 
 	public void insert(Integer element) {
+
 		raiz = insertRecursive(raiz, element);
 	}
 
@@ -45,20 +46,38 @@ public class BST implements BST_IF {
 	}
 
 	public int[] preOrder() {
-		int[] placeholder = new int[] { 1, 2, 3 }; // Substitua pelos valores desejados
-		return placeholder;
+		int[] resultados = new int[quantNo(raiz)];
+		preOrderRecursive(raiz, resultados,new Indice());
+		return resultados;
 	}
 
-	private void preOrderRecursive(No raiz, int[] result) {
+	public void preOrderRecursive(No raiz, int[] result,Indice indice) {
+		if(raiz != null) {
+
+			result[indice.valor++] = raiz.data;
+			System.out.println(raiz.data);
+			preOrderRecursive(raiz.esquerda, result, indice);
+			preOrderRecursive(raiz.direita, result, indice);
+
+		}
 
 	}
 
 	public int[] order() {
-		int[] placeholder = new int[] { 1, 2, 3 }; // Substitua pelos valores desejados
-		return placeholder;
+		int[] resultados = new int[quantNo(raiz)];
+		orderRecursive(raiz, resultados,new Indice());
+		return resultados;
 	}
 
-	private void orderRecursive(No raiz, int[] result) {
+	private void orderRecursive(No raiz, int[] result, Indice indice) {
+				if(raiz != null) {
+
+					orderRecursive(raiz.esquerda, result, indice);
+					result[indice.valor++] = raiz.data;
+					System.out.println(raiz.data);
+					orderRecursive(raiz.direita, result, indice);
+
+		}
 
 	}
 
@@ -73,14 +92,9 @@ public class BST implements BST_IF {
 		if(raiz != null) {
 			postOrderRecursive(raiz.esquerda, result, indice);
 			postOrderRecursive(raiz.direita, result, indice);
-			if (indice.valor > 0) {
-				result[indice.valor--] = raiz.data;
-				indice.valor--; // Decrementa apenas se o índice for maior que zero
-			} else {
-				// Trate o caso em que o índice já é zero ou negativo, se necessário
-				// Isso pode ocorrer se houver mais elementos do que o valor inicial de Indice
-				// Por exemplo, se a árvore for modificada após a criação de Indice
-			}
+			result[indice.valor++] = raiz.data;
+			System.out.println(raiz.data);
+
 		}
 	}
 
@@ -108,7 +122,6 @@ public class BST implements BST_IF {
 
 
 	public static class Indice {
-		BST arvore = new BST();
-		int valor = arvore.quantNo(arvore.raiz);
+		int valor;
 	}
 }
