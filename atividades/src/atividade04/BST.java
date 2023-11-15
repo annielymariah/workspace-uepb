@@ -35,27 +35,35 @@ public class BST implements BST_IF {
 	}
 
 	public Integer search(Integer element) throws Exception {
-
-		return 0;
+		Integer resultado = searchRecursivo(raiz, element);
+		if (resultado == null) {
+			throw new Exception("Elemento não encontrado na BST.");
+		}
+		return resultado;
 	}
 
-	private Integer searchRecursive(No raiz, Integer element) {
+	private Integer searchRecursivo(No raiz, Integer element) {
+		if (raiz == null || raiz.data.equals(element)) {
+			return (raiz != null) ? raiz.data : null;
+		}
 
-		return 0;
+		if (element < raiz.data) {
+			return searchRecursivo(raiz.esquerda, element);
+		}
 
+		return searchRecursivo(raiz.direita, element);
 	}
 
 	public int[] preOrder() {
-		int[] resultados = new int[quantNo(raiz)];
-		preOrderRecursive(raiz, resultados,new Indice());
+		int[] resultados = new int[tamanho(raiz)];
+		preOrderRecursive(raiz, resultados, new Indice());
 		return resultados;
 	}
 
-	public void preOrderRecursive(No raiz, int[] result,Indice indice) {
-		if(raiz != null) {
+	public void preOrderRecursive(No raiz, int[] result, Indice indice) {
+		if (raiz != null) {
 
 			result[indice.valor++] = raiz.data;
-			System.out.println(raiz.data);
 			preOrderRecursive(raiz.esquerda, result, indice);
 			preOrderRecursive(raiz.direita, result, indice);
 
@@ -64,62 +72,76 @@ public class BST implements BST_IF {
 	}
 
 	public int[] order() {
-		int[] resultados = new int[quantNo(raiz)];
-		orderRecursive(raiz, resultados,new Indice());
+		int[] resultados = new int[tamanho(raiz)];
+		orderRecursive(raiz, resultados, new Indice());
 		return resultados;
 	}
 
 	private void orderRecursive(No raiz, int[] result, Indice indice) {
-				if(raiz != null) {
+		if (raiz != null) {
 
-					orderRecursive(raiz.esquerda, result, indice);
-					result[indice.valor++] = raiz.data;
-					System.out.println(raiz.data);
-					orderRecursive(raiz.direita, result, indice);
+			orderRecursive(raiz.esquerda, result, indice);
+			result[indice.valor++] = raiz.data;
+			orderRecursive(raiz.direita, result, indice);
 
 		}
 
 	}
 
-
 	public int[] postOrder() {
-		int[] resultados = new int[quantNo(raiz)];
-		postOrderRecursive(raiz, resultados,new Indice());
+		int[] resultados = new int[tamanho(raiz)];
+		postOrderRecursive(raiz, resultados, new Indice());
 		return resultados;
 	}
 
 	public void postOrderRecursive(No raiz, int[] result, Indice indice) {
-		if(raiz != null) {
+		if (raiz != null) {
 			postOrderRecursive(raiz.esquerda, result, indice);
 			postOrderRecursive(raiz.direita, result, indice);
 			result[indice.valor++] = raiz.data;
-			System.out.println(raiz.data);
 
 		}
 	}
 
 	public boolean isComplete() {
-		return true;
+		int indice = 0;
+		return isCompleteRecursive(raiz, indice, tamanho(raiz));
 	}
 
-	private boolean isCompleteRecursive(No raiz) {
-		return false;
+	private boolean isCompleteRecursive(No raiz, int indice, int tamanho) {
+		if (raiz == null) {
+			return true;
+		}
+
+		if (indice >= tamanho) {
+			return false;
+		}
+
+		return (isCompleteRecursive(raiz.esquerda, 2 * indice + 1, tamanho) &&
+				isCompleteRecursive(raiz.direita, 2 * indice + 2, tamanho));
 	}
 
-	public int quantNo(No raiz) {
+	public int tamanho(No raiz) {
 		if (raiz == null) {
 			return 0;
 		}
-		return 1 + quantNo(raiz.esquerda) + quantNo(raiz.direita);
+		return 1 + tamanho(raiz.esquerda) + tamanho(raiz.direita);
 	}
 
-	public static void indexarValoresReverso(int[] vetor, int[] valores, int indice) {
-		if (indice >= 0) {
-			vetor[indice] = valores[indice];
-			indexarValoresReverso(vetor, valores, indice - 1);
+	public int height(No raiz) {
+		if (raiz != null) {
+			int hdireita, hesquerda = 0;
+
+			hesquerda = height(raiz.esquerda);
+			hdireita = height(raiz.direita);
+
+			if (hdireita > hesquerda)
+				return hdireita + 1;
+
+			return hesquerda + 1;
 		}
+		return 0;
 	}
-
 
 	public static class Indice {
 		int valor;
