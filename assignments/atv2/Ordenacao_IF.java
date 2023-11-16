@@ -1,4 +1,4 @@
-package atividade02;
+package assignments.atv2;
 
 /*
  * Interface para implementação da classe "Ordenacao".

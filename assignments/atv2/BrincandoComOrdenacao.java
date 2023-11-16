@@ -2,7 +2,7 @@
 // Turno: Manhã
 //  Projeto: algoritmos de Ordenação em JAVA e suas complexidades.
 
-package atividade02;
+package assignments.atv2;
 
 import java.util.ArrayList;
 import java.util.Collections;

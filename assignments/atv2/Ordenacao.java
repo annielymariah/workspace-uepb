@@ -1,4 +1,4 @@
-package atividade02;
+package assignments.atv2;
 
 import java.util.List;
 import java.util.Arrays;

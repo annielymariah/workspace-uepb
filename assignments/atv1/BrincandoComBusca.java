@@ -2,7 +2,7 @@
 // Turno: Manhã
 //  Projeto: algoritmos de busca em JAVA e suas complexidades.
 
-package atividade01;
+package assignments.atv1;
 
 public class BrincandoComBusca {
 

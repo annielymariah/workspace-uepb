@@ -1,4 +1,4 @@
-package atividade01;
+package assignments.atv1;
 
 public interface Busca_IF {
 
