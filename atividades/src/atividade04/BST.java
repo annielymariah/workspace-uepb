@@ -2,148 +2,144 @@ package atividade04;
 
 public class BST implements BST_IF {
 
-	public No raiz;
+	public Node root;
 
-	public class No {
+	public class Node {
 		Integer data;
-		No esquerda, direita;
+		Node left, right;
 
-		public No(Integer item) {
-			data = item;
-			esquerda = direita = null;
+		public Node(Integer element) {
+			data = element;
+			left = right = null;
 		}
 	}
 
+	@Override
 	public void insert(Integer element) {
-
-		raiz = insertRecursive(raiz, element);
+		root = insertRecursive(root, element);
 	}
 
-	public No insertRecursive(No raiz, Integer element) {
-		if (raiz == null) {
-			raiz = new No(element);
-			return raiz;
+	private Node insertRecursive(Node root, Integer element) {
+		if (root == null) {
+			root = new Node(element);
+			return root;
 		}
 
-		if (element < raiz.data) {
-			raiz.esquerda = insertRecursive(raiz.esquerda, element);
-		} else if (element > raiz.data) {
-			raiz.direita = insertRecursive(raiz.direita, element);
+		if (element < root.data) {
+			root.left = insertRecursive(root.left, element);
+		} else if (element > root.data) {
+			root.right = insertRecursive(root.right, element);
 		}
 
-		return raiz;
+		return root;
 	}
 
+	@Override
 	public Integer search(Integer element) throws Exception {
-		Integer resultado = searchRecursivo(raiz, element);
-		if (resultado == null) {
+		Integer result = searchRecursive(root, element);
+		if (result == null) {
 			throw new Exception("Elemento não encontrado na BST.");
 		}
-		return resultado;
+		return result;
 	}
 
-	private Integer searchRecursivo(No raiz, Integer element) {
-		if (raiz == null || raiz.data.equals(element)) {
-			return (raiz != null) ? raiz.data : null;
+	private Integer searchRecursive(Node root, Integer element) {
+		if (root == null || root.data.equals(element)) {
+			return (root != null) ? root.data : null;
 		}
 
-		if (element < raiz.data) {
-			return searchRecursivo(raiz.esquerda, element);
+		if (element < root.data) {
+			return searchRecursive(root.left, element);
 		}
-
-		return searchRecursivo(raiz.direita, element);
+		return searchRecursive(root.right, element);
 	}
 
+	@Override
 	public int[] preOrder() {
-		int[] resultados = new int[tamanho(raiz)];
-		preOrderRecursive(raiz, resultados, new Indice());
-		return resultados;
+		int[] results = new int[size(root)];
+		preOrderRecursive(root, results, new Index());
+		return results;
 	}
 
-	public void preOrderRecursive(No raiz, int[] result, Indice indice) {
-		if (raiz != null) {
-
-			result[indice.valor++] = raiz.data;
-			preOrderRecursive(raiz.esquerda, result, indice);
-			preOrderRecursive(raiz.direita, result, indice);
-
+	private void preOrderRecursive(Node root, int[] result, Index i) {
+		if (root != null) {
+			result[i.value++] = root.data;
+			preOrderRecursive(root.left, result, i);
+			preOrderRecursive(root.right, result, i);
 		}
-
 	}
 
+	@Override
 	public int[] order() {
-		int[] resultados = new int[tamanho(raiz)];
-		orderRecursive(raiz, resultados, new Indice());
-		return resultados;
+		int[] results = new int[size(root)];
+		orderRecursive(root, results, new Index());
+		return results;
 	}
 
-	private void orderRecursive(No raiz, int[] result, Indice indice) {
-		if (raiz != null) {
-
-			orderRecursive(raiz.esquerda, result, indice);
-			result[indice.valor++] = raiz.data;
-			orderRecursive(raiz.direita, result, indice);
-
+	private void orderRecursive(Node root, int[] result, Index i) {
+		if (root != null) {
+			orderRecursive(root.left, result, i);
+			result[i.value++] = root.data;
+			orderRecursive(root.right, result, i);
 		}
-
 	}
 
+	@Override
 	public int[] postOrder() {
-		int[] resultados = new int[tamanho(raiz)];
-		postOrderRecursive(raiz, resultados, new Indice());
-		return resultados;
+		int[] results = new int[size(root)];
+		postOrderRecursive(root, results, new Index());
+		return results;
 	}
 
-	public void postOrderRecursive(No raiz, int[] result, Indice indice) {
-		if (raiz != null) {
-			postOrderRecursive(raiz.esquerda, result, indice);
-			postOrderRecursive(raiz.direita, result, indice);
-			result[indice.valor++] = raiz.data;
-
+	private void postOrderRecursive(Node root, int[] result, Index i) {
+		if (root != null) {
+			postOrderRecursive(root.left, result, i);
+			postOrderRecursive(root.right, result, i);
+			result[i.value++] = root.data;
 		}
 	}
 
+	@Override
 	public boolean isComplete() {
-		int indice = 0;
-		return isCompleteRecursive(raiz, indice, tamanho(raiz));
+		int i = 0;
+		return isCompleteRecursive(root, i, size(root));
 	}
 
-	private boolean isCompleteRecursive(No raiz, int indice, int tamanho) {
-		if (raiz == null) {
+	private boolean isCompleteRecursive(Node root, int index, int size) {
+		if (root == null) {
 			return true;
 		}
 
-		if (indice >= tamanho) {
+		if (index >= size) {
 			return false;
 		}
 
-		return (isCompleteRecursive(raiz.esquerda, 2 * indice + 1, tamanho) &&
-				isCompleteRecursive(raiz.direita, 2 * indice + 2, tamanho));
+		return (isCompleteRecursive(root.left, 2 * index + 1, size) &&
+				isCompleteRecursive(root.right, 2 * index + 2, size));
 	}
 
-	public int tamanho(No raiz) {
-		if (raiz == null) {
+	public int size(Node size) {
+		if (size == null) {
 			return 0;
 		}
-		return 1 + tamanho(raiz.esquerda) + tamanho(raiz.direita);
+		return 1 + size(size.left) + size(size.right);
 	}
 
-	public int height(No raiz) {
-		if (raiz != null) {
-			int hdireita, hesquerda = 0;
+	public int height(Node root) {
+		if (root != null) {
+			int hRight, hLeft = 0;
+			hLeft = height(root.left);
+			hRight = height(root.right);
 
-			hesquerda = height(raiz.esquerda);
-			hdireita = height(raiz.direita);
+			if (hRight > hLeft)
+				return hRight + 1;
 
-			if (hdireita > hesquerda)
-				return hdireita + 1;
-
-			return hesquerda + 1;
+			return hLeft + 1;
 		}
 		return 0;
 	}
 
-	public static class Indice {
-		int valor;
+	public static class Index {
+		int value;
 	}
 }
