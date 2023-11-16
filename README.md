@@ -39,6 +39,4 @@ A disciplina de Estrutura de Dados aborda conceitos essenciais para o desenvolvi
 
 ---
 
-**Última Atualização:** [Data da última atualização]
-
 **Aviso:** Este repositório é mantido pelos alunos da disciplina, podendo ou não ter as melhores maneiras de implementação das atividades anexadas. Seu objetivo é apenas o armazenamento dos códigos elaborados. 🚀
