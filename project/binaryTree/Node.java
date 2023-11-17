@@ -1,4 +1,4 @@
-package BinaryTree;
+package binaryTree;
 
 public class Node<T> {
     protected T data; 

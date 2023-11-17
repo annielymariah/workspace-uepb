@@ -1,4 +1,4 @@
-package BinaryTree;
+package binaryTree;
 
 public class Tree<T extends Comparable<T>> {
 
