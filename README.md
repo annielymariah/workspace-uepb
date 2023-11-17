@@ -35,7 +35,7 @@ A disciplina de Estrutura de Dados aborda conceitos essenciais para o desenvolvi
 
 - Anniely Medeiros: [@annielymariah](https://github.com/annielymariah)
 - Gabriel Soares: [@Gaaaybe](https://github.com/Gaaaybe)
-- João Costa: [@Akarui](https://github.com/Akarui)
+- João Costa: [@TheAkarui](https://github.com/TheAkarui)
 
 ---
 
