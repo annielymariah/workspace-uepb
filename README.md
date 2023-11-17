@@ -67,7 +67,7 @@ Colaborador: Anniely Medeiros
 ## Autores 👩🏽‍💻
 
 - **Anniely Medeiros:** [@annielymariah](https://github.com/annielymariah)
-- **João Costa:** [@Akarui](https://github.com/Akarui)
+- **João Costa:** [@TheAkarui](https://github.com/TheAkarui)
 - **Gabriel Soares:** [@Gaaaybe](https://github.com/Gaaaybe)
 
 ---
