@@ -11,7 +11,7 @@ public class Tree<T extends Comparable<T>> {
     public Node<T> getRoot() {
         return root;
     }
-    
+
     public void insert(T element) {
         Node<T> node = new Node<>(element);
 
@@ -84,69 +84,67 @@ public class Tree<T extends Comparable<T>> {
 
     public void search(T element) {
         Node<T> current = this.root;
-    
+
         while (current != null) {
             if (current.getData().equals(element)) {
                 System.out.println("true");
                 return;
             } else if (current.getData().compareTo(element) < 0) {
-                current = current.getLeft();
+                current = current.getRight(); // Começa pela direita, depois vai para a esquerda, se não dá problema
             } else {
-                current = current.getRight();
+                current = current.getLeft();
             }
         }
-    
         System.out.println("false");
     }
 
-    // public boolean remove(T element) {
-    //     Node<T> current = this.root;
-        
-    //     Node<T> previous = null;
+    public void remove(T element) {
+        root = removeElement(root, element);
+    }
 
-    //     if (current == null) {
-    //         return false;
-    //     }
+    private Node<T> removeElement(Node<T> current, T element) {
+        if (current == null) {
+            return null;
+        }
 
-    //     while (current != null) {
-    //         if (current.data.equals(element)) {
-    //             break;
-    //         } else if (current.data.compareTo(element) == -1) {
-    //             previous = current;
-    //             current = current.getLeft();
-    //         } else {
-    //             previous = current;
-    //             current = current.getRight();
-    //         }
-    //     }
+        int comparison = element.compareTo(current.getData());
 
-    //     if (current.getLeft().equals(null) && current.getRight().equals(null)) { // Não possuí filhos
-    //         if (current.getData().compareTo(previous.getData()) == 1) {
-    //             previous.setRight(null);
-    //         }
-    //         previous.setLeft(null);
+        if (comparison < 0) {
+            // Elemento a ser removido está na subárvore esquerda
+            current.setLeft(removeElement(current.getLeft(), element));
+        } else if (comparison > 0) {
+            // Elemento a ser removido está na subárvore direita
+            current.setRight(removeElement(current.getRight(), element));
+        }
 
-    //     } else if (current.getLeft() != null) { // Possuí filho a esquerda
-    //         current = current.getLeft();
-    //         if (current.getData().compareTo(previous.getData()) == 1) {
-    //             previous.setRight(current);
-    //         }
-    //         previous.setLeft(current);
+        else {
 
-    //     } else if (current.getRight() != null) { // Possuí filho a direita
-    //         current = current.getRight();
-    //         if (current.getData().compareTo(previous.getData()) == 1) {
-    //             previous.setRight(current);
-    //         }
-    //         previous.setLeft(current);
+            // Elemento encontrado, realizar a remoção
 
-    //     } else { // Possuí ambos os filhos
-    //         if (current.getData().compareTo(previous.getData()) == 1) {
-    //             previous.setRight(current);
-    //         }
-    //         previous.setLeft(current);
-    //     }
-    //     return true;
-    // }
+            if (current.getLeft() == null) { // Verifica se não há filhos a esqueda, retorna o elemento
+                return current.getRight();
+            } else if (current.getRight() == null) { // Verifica se não há filhos a direita, retorna o elemento
+                return current.getLeft();
+            }
 
+            current.setData(findMin(current.getRight()).getData());
+            current.setRight(removeElement(current.getRight(), current.getData()));
+        }
+
+        return current;
+    }
+
+    private Node<T> findMin(Node<T> node) {
+        while (node.getLeft() != null) {
+            node = node.getLeft();
+        }
+        return node;
+    }
+
+    private Node<T> findMax(Node<T> node) {
+        while (node.getRight() != null) {
+            node = node.getLeft();
+        }
+        return node;
+    }
 }

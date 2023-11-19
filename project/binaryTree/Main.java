@@ -21,9 +21,10 @@ public class Main {
 
         System.out.print("\nPós-ordem: ");
         binaryTree.order(1);
-
-        Integer num = 18;
-        binaryTree.search(num);
+        binaryTree.search(1);
+        binaryTree.remove(18);
+        System.out.print("Em-ordem: ");
+        binaryTree.order(0);
     }
 
 }
