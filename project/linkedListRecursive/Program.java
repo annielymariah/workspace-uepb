@@ -1,4 +1,5 @@
 package linkedListRecursive;
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -10,8 +11,15 @@ public class Program {
 
         LinkedList<Integer> list = new LinkedList<>();
 
+        System.out.println("1 - Verificar lista vazia: public boolean isEmpty();\r\n" + //
+                "2 - Verificar tamanho da lista: public int size();\r\n" + //
+                "3 - Procurar elemento: public T search (T element);\r\n" + //
+                "4 - Inserir elemento: public void insert(T element);\r\n" + //
+                "5 - Remover elemento: public void remove(T element);\r\n" + //
+                "6 - Visualizar lista: public void string();\r\n" + //
+                "-1 - Sair;");
+
         do {
-            initMenu();
             select = sc.nextInt();
 
             switch (select) {
@@ -41,24 +49,22 @@ public class Program {
                     break;
                 }
                 case 5: {
-                    System.out.print("Insira o valor que deseja retirar: ");
+                    System.out.print("Insira o valor que deseja remover: ");
                     int element = sc.nextInt();
                     list.remove(element);
-                    System.out.println(list);
                     break;
                 }
+                case 6: {
+                    list.string();
+                    break;
+                }
+                default: {
+                    System.out.println("Insire o valor -1 para sair.");
+                }
+
             }
 
-        } while (select != 6);
+        } while (select != -1);
         sc.close();
-    }
-
-    public static void initMenu() {
-        System.out.println("1 - Verificar lista vazia: public boolean isEmpty();\r\n" + //
-                "2 - Verificar tamanho da lista: public int size();\r\n" + //
-                "3 - Procurar elemento: public T search (T element);\r\n" + //
-                "4 - Inserir elemento: public void insert(T element);\r\n" + //
-                "5 - Remover elemento: public void remove(T element);\r\n" + //
-                "6 - Finalizar programa;");
     }
 }
